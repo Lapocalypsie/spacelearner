@@ -17,4 +17,21 @@ public class ToDoList {
     private String titleList;
     private String content;
     private Boolean isDone;
+
+    public Boolean getDone() {
+        return isDone;
+    }
+
+    public String getContent() {
+        return content;
+    }
+
+    public String getTitleList() {
+        return titleList;
+    }
+
+    public ObjectId getId() {
+        return id;
+    }
+
 }

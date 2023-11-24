@@ -1,8 +1,7 @@
-import Calendar from "./components/calendar";
-import Citation from "./components/citation";
-import CourseList from "./components/cours";
-import ToDo from "./components/todo";
-
+import Calendar from "@/components/calendar";
+import Citation from "@/components/citation";
+import CourseList from "@/components/cours";
+import ToDo from "@/components/todo";
 
 export default function Home() {
   return (
