@@ -17,6 +17,7 @@ public class ToDoList {
     private String titleList;
     private String content;
     private Boolean isDone;
+    private String personalId;
 
     public Boolean getDone() {
         return isDone;

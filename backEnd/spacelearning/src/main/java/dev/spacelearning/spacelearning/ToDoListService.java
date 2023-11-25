@@ -29,9 +29,4 @@ public class ToDoListService {
         return toDoListRepository.insert(toDoList);
 
     }
-
-    public void deleteTodoList(ObjectId id) {
-        toDoListRepository.deleteById(id);
-    }
-
 }
