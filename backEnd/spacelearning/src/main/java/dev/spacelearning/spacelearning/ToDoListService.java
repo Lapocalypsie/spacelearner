@@ -5,6 +5,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 
 import java.util.List;
 
@@ -28,5 +30,9 @@ public class ToDoListService {
 
         return toDoListRepository.insert(toDoList);
 
+    }
+
+    public void deleteTodoList(ObjectId id){
+        toDoListRepository.deleteById(id);
     }
 }

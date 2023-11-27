@@ -1,5 +1,6 @@
 package dev.spacelearning.spacelearning;
 
+import org.bson.types.ObjectId;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -20,5 +21,10 @@ public class ToDoListController {
     public ResponseEntity<ToDoList> createToDoList(@RequestBody ToDoList toDoList) {
         ToDoList createdToDo = toDoListService.createTodoList(toDoList.getTitleList(), toDoList.getContent(), toDoList.getDone());
         return new ResponseEntity<ToDoList>(createdToDo, HttpStatus.CREATED);
+    }
+
+    @DeleteMapping("/{id}")
+    public void deleteToDoList(@PathVariable("id") ObjectId id) {
+        toDoListService.deleteTodoList(id);
     }
 }
