@@ -141,12 +141,12 @@ function ToDo() {
           />
         </div>
       </div>
-      <div className="mt-2 flex flex-col container mx-auto p-4">
+        {/*<div className="mt-2 flex flex-col container mx-auto p-4">
         <span className="text-lg">
           💪 Bravo ! : {checkedTodos.length} tâches de réalisées !
         </span>
         <span className="text-lg">👊 Plus que {todos.length} maintenant !</span>
-      </div>
+      </div>*/}
     </div>
   );
 }
