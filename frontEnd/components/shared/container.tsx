@@ -3,7 +3,7 @@ interface Props {
 }
 
 const Container = ({ children }: Props) => {
-  return <div className="mx-4 py-4">{children}</div>;
+  return <div className="">{children}</div>;
 };
 
 export default Container;
