@@ -15,35 +15,33 @@ export default function Home() {
   return (
     <Container>
       <main>
+        <p>Ici on aura l'icone</p>
         <h1 className="text-center text-black font-bold text-3xl mb-4 mt-8">
           Space Learning
         </h1>
-        <div className="flex flex-wrap">
-          <div className="w-full md:w-1/3 pr-0 md:pr-4 mb-4 md:mb-0 mt-4">
+        <div className="mx-20">
+          <div className="">
+            <Citation />
+          </div>
+          <div className="">
             <ToDo />
           </div>
-          <div className="w-full md:w-1/3 pl-0 md:pl-4">
-            <div className="mt-8">
-              <Citation />
-            </div>
-            <div className="mb-8 md:mb-20 items-center">
-              <div className="flex justify-center mb-8">
-                <CourseList />
-              </div>
-              <Calendar
-                mode="single"
-                selected={date}
-                onSelect={setDate}
-                className="rounded-md border border-gray-300"
-              />
-            </div>
+          <div className="flex justify-center mb-8">
+            <CourseList />
           </div>
+        </div>
+        <Calendar
+            mode="single"
+            selected={date}
+            onSelect={setDate}
+            className="rounded-md border border-gray-300"
+        />
+
           <div className="w-full md:w-1/3 pl-0 md:pl-4 mt-8">
             <div className="mx-4">
               {"Here will be the Profile User overviews"}
             </div>
           </div>
-        </div>
       </main>
     </Container>
   );

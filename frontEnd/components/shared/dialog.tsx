@@ -72,14 +72,14 @@ export function Dialogue({
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <Button variant="outline">{buttonTitle}</Button>
+        <Button className="bg-green-700 text-white w-full text-lg pt-6 pb-6 hover:bg-green-800 hover:text-white" variant="outline">{buttonTitle}</Button>
       </DialogTrigger>
       <DialogContent className="sm:max-w-[425px]">
         <DialogHeader>
           <DialogTitle>{title}</DialogTitle>
           <DialogDescription>{description}</DialogDescription>
         </DialogHeader>
-        <div className="grid gap-4 py-4">
+        <div className="grid gap-4 py-4 bg">
           <div className="grid grid-cols-4 items-center gap-4">
             <Label htmlFor="titre" className="text-right">
               {label1}

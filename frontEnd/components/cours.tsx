@@ -20,7 +20,7 @@ const Course: React.FC<CourseProps> = ({
   onRemove,
 }) => {
   return (
-    <tr className={`course ${status ? "bg-green-100" : "bg-red-100"}`}>
+    <tr className={`course ${status ? "bg-gray-200" : "bg-white"}`}>
       <td className="p-2">
         <input
           type="checkbox"
@@ -35,10 +35,10 @@ const Course: React.FC<CourseProps> = ({
       {/* New column for next revision */}
       <td className="p-2">
         <button
-          onClick={() => onRemove(id)}
-          className="bg-red-500 text-white py-1 px-2 rounded"
+            onClick={() => onRemove(id)}
+            className="bg-red-500 text-white py-2 px-4 rounded cursor-pointer"
         >
-          Remove
+          Supprimer
         </button>
       </td>
     </tr>
@@ -96,12 +96,17 @@ const CourseList: React.FC = () => {
   };
 
   return (
-    <div className="container mx-auto px-4 py-4 border border-purple-400 p-4 rounded-lg">
-      <h1 className="font-bold text-2xl mb-4">Mes cours</h1>
-      <div className="overflow-x-auto">
+    <div className="container mx-auto p-8 rounded-lg bg-white shadow-lg">
+      <div className="flex items-center mb-6">
+        <svg className="h-8 w-8 text-indigo-500 stroke-current" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 13V6a2 2 0 00-2-2H6a2 2 0 00-2 2v7m16 0v5a2 2 0 01-2 2H6a2 2 0 01-2-2v-5m16 0h-2.586a1 1 0 00-.707.293l-2.414 2.414a1 1 0 01-.707.293h-3.172a1 1 0 01-.707-.293l-2.414-2.414A1 1 0 006.586 13H4" />
+        </svg>
+        <h4 className="font-semibold ml-3 text-xl">Cours</h4>
+      </div>
+      <div className="overflow-x-auto rounded-lg shadow-lg">
         <table className="w-full border-collapse">
           <thead>
-            <tr className="bg-gray-100">
+            <tr className="bg-gray-900 text-white">
               <th className="p-2">Status</th>
               <th className="p-2">Course</th>
               <th className="p-2">{"Date d'ajout"}</th>
@@ -165,9 +170,9 @@ const CourseList: React.FC = () => {
               <td className="p-2">
                 <button
                   onClick={handleAdd}
-                  className="bg-blue-500 text-white py-2 px-4 rounded"
+                  className="bg-green-700 text-white py-2 px-4 rounded"
                 >
-                  Add
+                  Ajouter
                 </button>
               </td>
             </tr>
