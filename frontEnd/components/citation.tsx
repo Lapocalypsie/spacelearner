@@ -1,5 +1,4 @@
 import React from "react";
-import StarIcon from "./icon";
 
 function Citation() {
   const citationDay =

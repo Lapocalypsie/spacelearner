@@ -7,8 +7,6 @@ import ToDo from "@/components/todo";
 import { Calendar } from "@/components/ui/calendar";
 import React from "react";
 
-import image from "@/public/SpaceBackground.jpg";
-
 export default function Home() {
   const [date, setDate] = React.useState<Date | undefined>(new Date());
 
