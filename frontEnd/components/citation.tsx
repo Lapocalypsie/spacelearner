@@ -6,14 +6,16 @@ function Citation() {
   const author = "Paul J. Meyer";
 
   return (
-    <div className="border border-purple-400 p-4 rounded-lg mb-8 mt-8">
-      <div className="flex items-center">
-        <p className="text-2xl">🌟</p>
-        <p className="hover:font-bold my-2 ml-4">{citationDay}</p>
-      </div>
-
-      <p className="ml-12 mt-2"> - {author} </p>
-    </div>
+          <div className="w-full mx-auto rounded-lg bg-white shadow-lg p-8 text-gray-800">
+              <div className="w-full mb-10">
+                  <div className="text-3xl text-indigo-500 text-left leading-tight h-3">“</div>
+                  <p className="text-sm text-gray-600 text-center px-5">{citationDay}</p>
+                  <div className="text-3xl text-indigo-500 text-right leading-tight h-3 -mt-3">”</div>
+              </div>
+              <div className="w-full">
+                  <p className="text-md text-indigo-500 font-bold text-center">{author}</p>
+              </div>
+          </div>
   );
 }
 

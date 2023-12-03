@@ -16,6 +16,6 @@ public class SpacelearningApplication {
 
 	@GetMapping("/")
 	public String apiRoot() {
-		return "Hello World";
+		return "Hello World 2";
 	}
 }
