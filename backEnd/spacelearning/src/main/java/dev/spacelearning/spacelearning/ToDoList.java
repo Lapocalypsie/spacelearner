@@ -34,4 +34,10 @@ public class ToDoList {
     public ObjectId getId() {
         return id;
     }
+
+    public void supprimerTask(String task) {
+    }
+
+    public void ajouterTask(String task) {
+    }
 }
