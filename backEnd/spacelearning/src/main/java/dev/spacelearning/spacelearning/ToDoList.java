@@ -7,6 +7,9 @@ import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Document(collection = "ToDoList")
 @Data
 @AllArgsConstructor
@@ -16,11 +19,16 @@ public class ToDoList {
     private ObjectId id;
     private String titleList;
     private String content;
+    private List<String> tasks = new ArrayList<>();
     private Boolean isDone;
     private String personalId;
 
     public Boolean getDone() {
         return isDone;
+    }
+
+    public List<String> getTasks() {
+        return tasks;
     }
 
     public String getContent() {
@@ -36,8 +44,10 @@ public class ToDoList {
     }
 
     public void supprimerTask(String task) {
+        tasks.remove(task);
     }
 
     public void ajouterTask(String task) {
+        tasks.add(task);
     }
 }

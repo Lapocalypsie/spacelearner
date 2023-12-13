@@ -16,6 +16,8 @@ public class Eleve {
     private ToDoList toDoList;
     private MesRevisions mesRevisions;
 
+    private List<Cours> coursSuivis;
+
     // Constructor
     public Eleve(String nom, String prenom, String pseudo, int age, String ecole) {
         this.nom = nom;
@@ -27,6 +29,7 @@ public class Eleve {
         this.coursList = new ArrayList<>();
         this.toDoList = new ToDoList();
         this.mesRevisions = new MesRevisions();
+        this.coursSuivis = new ArrayList<>();
     }
 
     // Methods
@@ -66,6 +69,11 @@ public class Eleve {
         this.nbrCoursSuivis = coursList.size();
     }
 
+    public void ajouterCoursSuivi(Cours cours) {
+        coursSuivis.add(cours);
+        nbrCoursSuivis++;
+    }
+
     public List<Cours> getCoursList() {
         return coursList;
     }
@@ -93,5 +101,8 @@ public class Eleve {
 
     public String getEcole() {
         return ecole;
+    }
+    public List<Cours> getCoursSuivis() {
+        return coursSuivis;
     }
 }
