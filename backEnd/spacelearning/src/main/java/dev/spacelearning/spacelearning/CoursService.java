@@ -39,10 +39,25 @@ public class CoursService {
     private List<LocalDate> remplirDatesApprentissage(LocalDate dateCreation) {
         List<LocalDate> datesApprentissage = new ArrayList<>();
         LocalDate dateActuelle = dateCreation;
-        for (int i = 0; i < 60; i++) {  // 2 mois, soit 60 jours
+
+        for (int i = 0; i < 60; i++) {  // 2 months, 60 days
             datesApprentissage.add(dateActuelle);
-            dateActuelle = dateActuelle.plusDays((long) Math.pow(2, i));
+
+            if (i % 7 == 0) {
+                // If it's a multiple of 7 (week), increment by 2 days
+                dateActuelle = dateActuelle.plusDays(2);
+            } else if (i % 7 == 2 || i % 7 == 5) {
+                // If it's 2 days after a multiple of 7 or 5 days after a multiple of 7, increment by 1 week
+                dateActuelle = dateActuelle.plusWeeks(1);
+            } else {
+                // Otherwise, increment by 3 weeks
+                dateActuelle = dateActuelle.plusWeeks(3);
+            }
         }
+
         return datesApprentissage;
     }
+
+
+
 }
