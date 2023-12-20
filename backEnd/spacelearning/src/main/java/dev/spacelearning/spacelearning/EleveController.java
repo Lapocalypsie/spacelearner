@@ -22,7 +22,7 @@ public class EleveController {
 
     @PostMapping
     public ResponseEntity<Eleve> createEleve(@RequestBody Eleve eleve) {
-        Eleve createdEleve = eleveService.createEleve(eleve.getNom(), eleve.getPrenom(), eleve.getPseudo(), eleve.getAge(), eleve.getEcole());
+        Eleve createdEleve = eleveService.createEleve(eleve);
         return new ResponseEntity<>(createdEleve, HttpStatus.CREATED);
     }
 
@@ -47,4 +47,6 @@ public class EleveController {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
     }
+}
+
 }
