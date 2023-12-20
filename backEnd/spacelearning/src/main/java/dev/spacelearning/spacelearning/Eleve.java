@@ -11,7 +11,8 @@ public class Eleve {
     private String pseudo;
     private int age;
     private String ecole;
-    private int nbrCoursSuivis;
+    private String email;
+    private String motDePasse;
     private List<Cours> coursList;
     private ToDoList toDoList;
     private MesRevisions mesRevisions;
@@ -19,28 +20,16 @@ public class Eleve {
     private List<Cours> coursSuivis;
 
     // Constructor
-    public Eleve(String nom, String prenom, String pseudo, int age, String ecole) {
-        this.nom = nom;
-        this.prenom = prenom;
-        this.pseudo = pseudo;
-        this.age = age;
-        this.ecole = ecole;
-        this.nbrCoursSuivis = 0;
+    public Eleve(String email, String motDePasse) {
         this.coursList = new ArrayList<>();
         this.toDoList = new ToDoList();
         this.mesRevisions = new MesRevisions();
-        this.coursSuivis = new ArrayList<>();
-    }
-
-    // Methods
-    public void AjoutCoursSuivi(Cours cours) {
-        coursList.add(cours);
-        nbrCoursSuivis++;
+        this.email = email;
+        this.motDePasse = motDePasse;
     }
 
     public void SuppCoursSuivi(Cours cours) {
         coursList.remove(cours);
-        nbrCoursSuivis--;
     }
 
     public void AjoutToDoTask(String task) {
@@ -52,7 +41,7 @@ public class Eleve {
     }
 
     public void Actualiser() {
-        // Your implementation for updating the state of the Etudiant object
+        // Your implementation for updating the state of the Eleve object
     }
 
     // Associations
@@ -66,12 +55,6 @@ public class Eleve {
 
     public void setCoursList(List<Cours> coursList) {
         this.coursList = coursList;
-        this.nbrCoursSuivis = coursList.size();
-    }
-
-    public void ajouterCoursSuivi(Cours cours) {
-        coursSuivis.add(cours);
-        nbrCoursSuivis++;
     }
 
     public List<Cours> getCoursList() {
@@ -102,7 +85,16 @@ public class Eleve {
     public String getEcole() {
         return ecole;
     }
+
     public List<Cours> getCoursSuivis() {
         return coursSuivis;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public String getMotDePasse() {
+        return motDePasse;
     }
 }
