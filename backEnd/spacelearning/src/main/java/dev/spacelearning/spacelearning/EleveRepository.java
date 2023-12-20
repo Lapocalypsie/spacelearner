@@ -15,5 +15,5 @@ public interface EleveRepository extends MongoRepository<Eleve, ObjectId> {
     void deleteById(ObjectId id);
 
     Eleve save(Eleve eleve);
-    // You can add custom query methods if needed
+    
 }
