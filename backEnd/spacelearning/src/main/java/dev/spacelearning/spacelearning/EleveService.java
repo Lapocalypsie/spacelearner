@@ -1,6 +1,5 @@
 package dev.spacelearning.spacelearning;
 
-
 import org.bson.types.ObjectId;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -17,8 +16,7 @@ public class EleveService {
         return eleveRepository.findAll();
     }
 
-    public Eleve createEleve(String nom, String prenom, String pseudo, int age, String ecole) {
-        Eleve eleve = new Eleve(nom, prenom, pseudo, age, ecole);
+    public Eleve createEleve(Eleve eleve) {
         return eleveRepository.save(eleve);
     }
 
@@ -34,3 +32,4 @@ public class EleveService {
         return false;
     }
 }
+
