@@ -3,16 +3,16 @@ package dev.spacelearning.spacelearning;
 public class TestEleve {
     public static void main(String[] args) {
         // Create instances of Eleve manually
-        Eleve eleve1 = new Eleve("Dupont", "Jean", "jeand", 21, "ESIEE Paris");
-        Eleve eleve2 = new Eleve("Martin", "Marie", "mariem", 22, "Sorbonne Université");
-        Eleve eleve3 = new Eleve("Leblanc", "Pierre", "pierrel", 23, "Université Paris-Sud");
-        Eleve eleve4 = new Eleve("Lefevre", "Warren", "warrenl", 24, "Université Paris Diderot");
-        Eleve eleve5 = new Eleve("Simon", "Claire", "claires", 24, "Télécom Paris");
-        Eleve eleve6 = new Eleve("Girard", "Luc", "lucg", 19, "Université Paris Dauphine");
-        Eleve eleve7 = new Eleve("Lefort", "Sophie", "sophiel", 22, "HEC Paris");
-        Eleve eleve8 = new Eleve("Mbappe", "Alexandre", "alexm", 22, "Université Paris Descartes");
-        Eleve eleve9 = new Eleve("Messi", "Lionel", "leom", 23, "ENS Paris");
-        Eleve eleve10 = new Eleve("Ronaldo", "Chris", "chrisr", 23, "Université Paris Nanterre");
+        Eleve eleve1 = new Eleve("jean.d@example.com", "password1");
+        Eleve eleve2 = new Eleve("marie.m@example.com", "password2");
+        Eleve eleve3 = new Eleve("pierre.l@example.com", "password3");
+        Eleve eleve4 = new Eleve("warren.l@example.com", "password4");
+        Eleve eleve5 = new Eleve("claire.s@example.com", "password5");
+        Eleve eleve6 = new Eleve("luc.g@example.com", "password6");
+        Eleve eleve7 = new Eleve("sophie.l@example.com", "password7");
+        Eleve eleve8 = new Eleve("alexandre.m@example.com", "password8");
+        Eleve eleve9 = new Eleve("lionel.m@example.com", "password9");
+        Eleve eleve10 = new Eleve("chris.r@example.com", "password10");
 
         // Add courses and ToDo tasks as needed
 
@@ -36,6 +36,7 @@ public class TestEleve {
         System.out.println("Pseudo: " + eleve.getPseudo());
         System.out.println("Age: " + eleve.getAge());
         System.out.println("Ecole: " + eleve.getEcole());
+        System.out.println("Email: " + eleve.getEmail());
         System.out.println("Number of Courses: " + eleve.getCoursList().size());
         System.out.println("Number of ToDo Tasks: " + eleve.getToDoList().getTasks().size());
         System.out.println();
