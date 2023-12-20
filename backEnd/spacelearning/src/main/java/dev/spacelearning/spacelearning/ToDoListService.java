@@ -27,9 +27,7 @@ public class ToDoListService {
         toDoList.setTitleList(titleList);
         toDoList.setContent(content);
         toDoList.setIsDone(isDone);
-
         return toDoListRepository.insert(toDoList);
-
     }
 
     public void deleteTodoList(ObjectId id){

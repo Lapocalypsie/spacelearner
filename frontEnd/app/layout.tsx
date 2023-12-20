@@ -1,4 +1,3 @@
-import Img from "@/components/shared/background";
 import "./globals.css";
 import { Inter } from "next/font/google";
 
