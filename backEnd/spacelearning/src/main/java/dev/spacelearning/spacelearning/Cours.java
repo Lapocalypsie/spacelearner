@@ -65,7 +65,7 @@ public class Cours {
     private List<LocalDate> remplirDatesApprentissage() {
         List<LocalDate> datesApprentissage = new ArrayList<>();
         LocalDate dateActuelle = dateCreation;
-        for (int i = 0; i < 60; i++) {  // 2 mois, soit 60 jours
+        for (int i = 0; i < 60; i++) {
             datesApprentissage.add(dateActuelle);
             dateActuelle = dateActuelle.plusDays((long) Math.pow(2, i));
         }
