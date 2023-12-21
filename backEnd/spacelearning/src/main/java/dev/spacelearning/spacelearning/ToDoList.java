@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.data.mongodb.core.mapping.Field;
 
 @Document(collection = "ToDoList")
 @Data
@@ -13,7 +14,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @NoArgsConstructor
 public class ToDoList {
     @Id
-    private ObjectId id;
+    private String _id; // Use String for custom ID
     private String titleList;
     private String content;
     private Boolean isDone;
@@ -30,8 +31,21 @@ public class ToDoList {
     public String getTitleList() {
         return titleList;
     }
+    public String get_id() {
+        return _id;
+    }
 
-    public ObjectId getId() {
-        return id;
+    public void set_id(String _id) {
+        this._id = _id;
+    }
+
+    // Getter and setter for id
+    public String getId() {
+        return _id;
+    }
+
+    public void setId() {
+        // Generate a random ObjectId and set it as a string
+        this._id = new ObjectId().toString();
     }
 }

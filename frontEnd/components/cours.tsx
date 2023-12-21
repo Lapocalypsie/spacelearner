@@ -1,10 +1,7 @@
 import React, { FC, useEffect, useState } from "react";
 
 interface CourseData {
-  id: {
-    timestamp: number;
-    date: string;
-  };
+  _id: string; // Update to use string type for _id
   nom: string;
   dateCreation: string;
   datesApprentissage: string[];
@@ -12,16 +9,13 @@ interface CourseData {
 }
 
 interface CourseProps {
-  id: {
-    timestamp: number;
-    date: string;
-  };
+  id: string; // Update to use string type for id
   name: string;
   date: string;
   status: boolean;
-  nextRevision: string; // Add this line
-  onToggle: (timestamp: number) => void;
-  onRemove: (timestamp: number) => void;
+  nextRevision: string;
+  onToggle: (id: string) => void; // Adjusted to use string type for id
+  onRemove: (id: string) => void; // Adjusted to use string type for id
 }
 
 const Course: React.FC<CourseProps> = ({
@@ -33,24 +27,23 @@ const Course: React.FC<CourseProps> = ({
   onToggle,
   onRemove,
 }) => {
-  const isEvenRow = id.timestamp % 2 === 0;
+  const isEvenRow = parseInt(id, 10) % 2 === 0; // Parse id to integer
   return (
     <tr className={`course ${isEvenRow ? "bg-gray-200" : "bg-white"}`}>
       <td className="p-2 text-center">
         <input
           type="checkbox"
           checked={status}
-          onChange={() => onToggle(id.timestamp)}
+          onChange={() => onToggle(id)}
           className="form-checkbox text-indigo-600 h-5 w-5"
         />
       </td>
       <td className="p-2 text-center">{name}</td>
       <td className="p-2 text-center">{date}</td>
       <td className="p-2 text-center">{nextRevision}</td>
-      {/* New column for next revision */}
       <td className="p-2 text-center">
         <button
-          onClick={() => onRemove(id.timestamp)}
+          onClick={() => onRemove(id)}
           className="bg-red-500 text-white py-2 px-4 rounded cursor-pointer w-full hover:bg-red-600"
         >
           Supprimer
@@ -69,46 +62,41 @@ const CourseList: React.FC = () => {
         const response = await fetch("http://localhost:8080/api/v1/cours");
         const data = await response.json();
         setCourses(data);
-        console.log("The data are : " + data);
       } catch (error) {
         console.error("Error fetching data:", error);
       }
     };
 
     fetchData();
-  }, []); // Empty dependency array ensures the effect runs only once (on mount)
+  }, []);
 
   const [newCourse, setNewCourse] = useState({
     name: "",
     date: "",
     status: false,
-    nextRevision: "", // Initialize next revision for new courses
+    nextRevision: "",
   });
 
-  const handleToggle = (timestamp: number) => {
+  const handleToggle = (id: string) => {
     setCourses(
       courses.map((course) =>
-        course.id.timestamp === timestamp
-          ? { ...course, status: !course.status }
-          : course
+        course._id === id ? { ...course, status: !course.status } : course
       )
     );
   };
 
-  const handleRemove = async (timestamp: number) => {
-    // Make a DELETE request to remove the course from the backend
+  const handleRemove = async (id: string) => {
     try {
-      await fetch(`http://localhost:8080/api/v1/cours/${timestamp}`, {
+      await fetch(`http://localhost:8080/api/v1/cours/${id}`, {
         method: "DELETE",
       });
-      setCourses(courses.filter((course) => course.id.timestamp !== timestamp));
+      setCourses(courses.filter((course) => course._id !== id));
     } catch (error) {
       console.error("Error deleting data:", error);
     }
   };
 
   const handleAdd = async () => {
-    // Make a POST request to add the new course to the backend
     try {
       const toSend = { nom: newCourse.name, dateCreation: newCourse.date };
       const response = await fetch("http://localhost:8080/api/v1/cours", {
@@ -119,11 +107,7 @@ const CourseList: React.FC = () => {
         body: JSON.stringify(toSend),
       });
       const data = await response.json();
-
-      // Add the new course to the local state
       setCourses([...courses, data]);
-
-      // Clear the new course input fields
       setNewCourse({ name: "", date: "", status: false, nextRevision: "" });
     } catch (error) {
       console.error("Error adding data:", error);
@@ -157,15 +141,14 @@ const CourseList: React.FC = () => {
               <th className="p-2">Cours</th>
               <th className="p-2">{"Date d'ajout"}</th>
               <th className="p-2">Prochaine révision</th>
-              {/* New column header */}
               <th className="p-2">Action</th>
             </tr>
           </thead>
           <tbody>
             {courses.map((course) => (
               <Course
-                key={course.id?.timestamp || 0}
-                id={course.id || { timestamp: 0, date: "" }}
+                key={course._id || "defaultKey"}
+                id={course._id || "defaultId"}
                 name={course.nom}
                 date={course.dateCreation}
                 status={course.status}

@@ -1,36 +1,38 @@
 package dev.spacelearning.spacelearning;
 
-import org.bson.types.ObjectId;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.mongodb.core.MongoTemplate;
-import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 
 import java.util.List;
+import java.util.UUID;
 
 @Service
 public class ToDoListService {
+
     @Autowired
     private ToDoListRepository toDoListRepository;
 
-    @Autowired
-    private MongoTemplate mongoTemplate;
-    public List<ToDoList> allTasks(){
-        System.out.println("All tasks service : "+ toDoListRepository.findAll());
+    public List<ToDoList> allTasks() {
+        System.out.println("All tasks service: " + toDoListRepository.findAll());
         return toDoListRepository.findAll();
     }
 
     public ToDoList createTodoList(String titleList, String content, Boolean isDone) {
         ToDoList toDoList = new ToDoList();
+        toDoList.set_id(generateRandomId()); // Set a random string ID
         toDoList.setTitleList(titleList);
         toDoList.setContent(content);
         toDoList.setIsDone(isDone);
+
         return toDoListRepository.insert(toDoList);
     }
 
-    public void deleteTodoList(ObjectId id){
-        toDoListRepository.deleteById(id);
+    public void deleteTodoList(String id) {
+        toDoListRepository.deleteBy_id(id);
+    }
+
+    private String generateRandomId() {
+        // Generate a random string ID using UUID
+        return UUID.randomUUID().toString().replace("-", "");
     }
 }

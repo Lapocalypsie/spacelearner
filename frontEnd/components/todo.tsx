@@ -16,10 +16,8 @@ function ToDo() {
   const fetchTasks = async () => {
     try {
       const response = await fetch("http://localhost:8080/api/v1/tasks");
-
       if (response.ok) {
         const data = await response.json();
-        console.log("data", data);
         // Update the todos state with the fetched tasks
         setTodos(data);
       } else {
@@ -43,13 +41,11 @@ function ToDo() {
   };
 
   const handleDeleteTask = async (task) => {
-    const taskId = task.id; // Assuming task.id is an object with properties timestamp and date
-    console.log("taskId", taskId);
-
-    if (taskId && taskId.timestamp && taskId.date) {
+    const taskId = task._id; // Accessing the _id field
+    if (taskId) {
       try {
         const response = await axios.delete(
-          `http://localhost:8080/api/v1/tasks/${taskId.timestamp}`
+          `http://localhost:8080/api/v1/tasks/${taskId}`
         );
         if (response.status === 204) {
           // Task deleted successfully, fetch tasks again
@@ -130,7 +126,7 @@ function ToDo() {
                 </label>
                 <button
                   className="bg-red-500 text-white py-2 px-4 rounded cursor-pointer hover:bg-red-600"
-                  onClick={() => handleDeleteTask(todo.id)}
+                  onClick={() => handleDeleteTask(todo)}
                 >
                   Supprimer
                 </button>

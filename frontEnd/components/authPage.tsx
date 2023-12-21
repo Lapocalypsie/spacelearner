@@ -1,7 +1,68 @@
+//@ts-nocheck
+"use client";
+
 import Image from "next/image";
 import Container from "./shared/container";
+import { useState } from "react";
+import { useRouter } from "next/navigation";
+import axios from "axios";
 
 export default function AuthPage() {
+  const router = useRouter();
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const handleSignIn = async (e) => {
+    e.preventDefault();
+
+    try {
+      const response = await axios.get("http://localhost:8080/api/v1/eleves");
+      const users = response.data;
+
+      // Check if the email and password match any user
+      const user = users.find(
+        (u) => u.email === email && u.password === password
+      );
+
+      if (user) {
+        // Navigate to the landPage and pass user information
+        router.push("/landPage", { user });
+      } else {
+        // Handle invalid credentials
+        console.log("Invalid credentials");
+      }
+    } catch (error) {
+      // Handle error fetching users
+      console.error("Error fetching users", error);
+    }
+  };
+
+  const handleSignUp = async (e) => {
+    e.preventDefault();
+    try {
+      // Perform the sign-up POST request
+      // You need to adapt this part based on your API's requirements
+      const response = await axios.post("http://localhost:8080/api/v1/eleves", {
+        email,
+        password,
+      });
+
+      // Navigate to the landPage and pass user information
+      router.push("/landPage", { user: response.data });
+    } catch (error) {
+      // Handle error during sign-up
+      console.error("Error signing up", error);
+    }
+  };
+
+  const handleEmailChange = (e) => {
+    setEmail(e.target.value);
+  };
+
+  const handlePasswordChange = (e) => {
+    setPassword(e.target.value);
+  };
+
   return (
     <Container>
       <div className="flex min-h-full flex-1">
@@ -34,6 +95,7 @@ export default function AuthPage() {
                       id="email"
                       name="email"
                       type="email"
+                      onChange={handleEmailChange}
                       autoComplete="email"
                       required
                       className="block w-full rounded-md border-0 py-1.5 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
@@ -53,6 +115,7 @@ export default function AuthPage() {
                       id="password"
                       name="password"
                       type="password"
+                      onChange={handlePasswordChange}
                       autoComplete="current-password"
                       required
                       className="block w-full rounded-md border-0 py-1.5 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
@@ -88,10 +151,21 @@ export default function AuthPage() {
 
                 <div>
                   <button
-                    type="submit"
+                    onClick={handleSignIn}
                     className="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
                   >
                     Sign in
+                  </button>
+                </div>
+                <div>
+                  <div>
+                    <p className="text-center mb-3">Pas encore de compte ?</p>
+                  </div>
+                  <button
+                    onClick={handleSignUp}
+                    className="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                  >
+                    Sign up
                   </button>
                 </div>
               </form>

@@ -1,6 +1,7 @@
 package dev.spacelearning.spacelearning;
 
-import org.bson.types.ObjectId;
+import dev.spacelearning.spacelearning.Cours;
+import dev.spacelearning.spacelearning.CoursService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -28,8 +29,10 @@ public class CoursController {
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<Void> deleteCours(@PathVariable("id") ObjectId id) {
+    public ResponseEntity<Void> deleteCours(@PathVariable("id") String id) {
+        System.out.println("L'ID est : " + id);
         coursService.deleteCours(id);
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
+
 }

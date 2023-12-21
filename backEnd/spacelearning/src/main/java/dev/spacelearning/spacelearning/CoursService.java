@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.UUID;
 
 @Service
 public class CoursService {
@@ -18,21 +19,24 @@ public class CoursService {
     private MongoTemplate mongoTemplate;
 
     public List<Cours> getAllCours() {
-        System.out.println("All cours service : " + coursRepository.findAll());
+        System.out.println("All cours service: " + coursRepository.findAll());
         return coursRepository.findAll();
     }
 
     public Cours createCours(String nom, LocalDate dateCreation) {
         Cours cours = new Cours();
+        cours.set_id(generateRandomId()); // Set a random string ID
         cours.setNom(nom);
         cours.setDateCreation(dateCreation);
-        cours.setDatesApprentissage(remplirDatesApprentissage(dateCreation)); // Remplir les dates d'apprentissage
+        cours.setDatesApprentissage(remplirDatesApprentissage(dateCreation));
 
+        // Insert the cours
         return coursRepository.insert(cours);
     }
 
-    public void deleteCours(ObjectId id) {
-        coursRepository.deleteById(id);
+
+    public void deleteCours(String id) {
+        coursRepository.deleteBy_id(id);
     }
 
     // Méthode pour remplir le tableau de dates d'apprentissage (similaire à celle dans la classe Cours)
@@ -57,7 +61,8 @@ public class CoursService {
 
         return datesApprentissage;
     }
-
-
-
+    private String generateRandomId() {
+        // Generate a random string ID using UUID
+        return UUID.randomUUID().toString().replace("-", "");
+    }
 }

@@ -17,26 +17,34 @@ import java.util.List;
 @NoArgsConstructor
 public class Cours {
     @Id
-    private ObjectId id;
+    private String _id; // Use String for custom ID
     private String nom;
     private LocalDate dateCreation;
     private List<LocalDate> datesApprentissage;
 
-    // Constructeur
-    public Cours(ObjectId id, String nom, LocalDate dateCreation) {
-        this.id = id;
+    // Constructor
+    public Cours(String nom, LocalDate dateCreation) {
         this.nom = nom;
         this.dateCreation = dateCreation;
         this.datesApprentissage = remplirDatesApprentissage();
     }
 
-    public ObjectId getId() {
-        return id;
+    // Getters and Setters
+    public void set_id(String _id) {
+        this._id = _id;
     }
 
-    public void setId(ObjectId id) {
-        this.id = id;
+    // Getter and setter for id
+    public String getId() {
+        return _id;
     }
+
+    public void setId() {
+        // Generate a random ObjectId and set it as a string
+        this._id = new ObjectId().toString();
+    }
+    // Getter and setter for id
+
 
     public String getNom() {
         return nom;
@@ -71,4 +79,4 @@ public class Cours {
         }
         return datesApprentissage;
     }
-    }
+}

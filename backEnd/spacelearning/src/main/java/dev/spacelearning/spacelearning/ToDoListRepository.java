@@ -6,4 +6,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface ToDoListRepository extends MongoRepository<ToDoList, ObjectId> {
+    void deleteBy_id(String id);
 }
