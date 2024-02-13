@@ -12,11 +12,14 @@ import java.util.UUID;
 
 @Service
 public class CoursService {
-    @Autowired
-    private CoursRepository coursRepository;
+    private final CoursRepository coursRepository;
 
-    @Autowired
-    private MongoTemplate mongoTemplate;
+    private final MongoTemplate mongoTemplate;
+
+    public CoursService(CoursRepository coursRepository, MongoTemplate mongoTemplate) {
+        this.coursRepository = coursRepository;
+        this.mongoTemplate = mongoTemplate;
+    }
 
     public List<Cours> getAllCours() {
         System.out.println("All cours service: " + coursRepository.findAll());

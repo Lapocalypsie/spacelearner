@@ -2,6 +2,7 @@ package dev.spacelearning.spacelearning;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
 import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
@@ -18,8 +19,11 @@ import java.util.List;
 public class Cours {
     @Id
     private String _id; // Use String for custom ID
+    @Getter
     private String nom;
+    @Getter
     private LocalDate dateCreation;
+    @Getter
     private List<LocalDate> datesApprentissage;
 
     // Constructor
@@ -46,24 +50,12 @@ public class Cours {
     // Getter and setter for id
 
 
-    public String getNom() {
-        return nom;
-    }
-
     public void setNom(String nom) {
         this.nom = nom;
     }
 
-    public LocalDate getDateCreation() {
-        return dateCreation;
-    }
-
     public void setDateCreation(LocalDate dateCreation) {
         this.dateCreation = dateCreation;
-    }
-
-    public List<LocalDate> getDatesApprentissage() {
-        return datesApprentissage;
     }
 
     public void setDatesApprentissage(List<LocalDate> datesApprentissage) {

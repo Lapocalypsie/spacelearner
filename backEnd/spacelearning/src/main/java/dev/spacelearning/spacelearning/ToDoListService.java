@@ -9,8 +9,11 @@ import java.util.UUID;
 @Service
 public class ToDoListService {
 
-    @Autowired
-    private ToDoListRepository toDoListRepository;
+    private final ToDoListRepository toDoListRepository;
+
+    public ToDoListService(ToDoListRepository toDoListRepository) {
+        this.toDoListRepository = toDoListRepository;
+    }
 
     public List<ToDoList> allTasks() {
         System.out.println("All tasks service: " + toDoListRepository.findAll());

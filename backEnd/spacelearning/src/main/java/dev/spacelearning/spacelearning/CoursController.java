@@ -13,8 +13,11 @@ import java.util.List;
 @RequestMapping("/api/v1/cours")
 public class CoursController {
 
-    @Autowired
-    private CoursService coursService;
+    private final CoursService coursService;
+
+    public CoursController(CoursService coursService) {
+        this.coursService = coursService;
+    }
 
     @GetMapping
     public ResponseEntity<List<Cours>> getAllCours() {

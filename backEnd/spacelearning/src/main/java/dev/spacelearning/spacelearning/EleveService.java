@@ -9,8 +9,11 @@ import java.util.List;
 @Service
 public class EleveService {
 
-    @Autowired
-    private EleveRepository eleveRepository;
+    private final EleveRepository eleveRepository;
+
+    public EleveService(EleveRepository eleveRepository) {
+        this.eleveRepository = eleveRepository;
+    }
 
     public List<Eleve> getAllEleves() {
         return eleveRepository.findAll();

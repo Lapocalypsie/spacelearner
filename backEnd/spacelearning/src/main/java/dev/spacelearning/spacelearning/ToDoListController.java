@@ -11,8 +11,11 @@ import java.util.List;
 @RestController
 @RequestMapping("/api/v1/tasks")
 public class ToDoListController {
-    @Autowired
-    private ToDoListService toDoListService;
+    private final ToDoListService toDoListService;
+
+    public ToDoListController(ToDoListService toDoListService) {
+        this.toDoListService = toDoListService;
+    }
 
     @GetMapping
     public ResponseEntity<List<ToDoList>> getAllTasks() {

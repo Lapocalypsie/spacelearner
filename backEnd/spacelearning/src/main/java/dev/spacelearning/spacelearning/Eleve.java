@@ -2,6 +2,7 @@ package dev.spacelearning.spacelearning;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
 import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
@@ -17,15 +18,25 @@ import java.util.List;
 public class Eleve {
     @Id
     private ObjectId id;
+    // Getter methods for 'email', 'password', 'nom', 'age', 'pseudo', 'prenom', and 'ecole'
+    @Getter
     private String email;
+    @Getter
     private String password;
+    @Getter
     private String nom;
+    @Getter
     private String prenom;
+    @Getter
     private String pseudo;
+    @Getter
     private int age;
+    @Getter
     private String ecole;
     private int nbrCoursSuivis;
+    @Getter
     private List<Cours> coursList;
+    @Getter
     private List<ToDoList> toDoList;
 
     // Constructor with email and password
@@ -56,42 +67,6 @@ public class Eleve {
         }
         coursList.add(cours);
         nbrCoursSuivis = coursList.size();
-    }
-    public List<Cours> getCoursList() {
-        return coursList;
-    }
-
-    public List<ToDoList> getToDoList() {
-        return toDoList;
-    }
-
-    // Getter methods for 'email', 'password', 'nom', 'age', 'pseudo', 'prenom', and 'ecole'
-    public String getEmail() {
-        return email;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public String getNom() {
-        return nom;
-    }
-
-    public int getAge() {
-        return age;
-    }
-
-    public String getPseudo() {
-        return pseudo;
-    }
-
-    public String getPrenom() {
-        return prenom;
-    }
-
-    public String getEcole() {
-        return ecole;
     }
 
     public List<Cours> getCoursSuivis() {
