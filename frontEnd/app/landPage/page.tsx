@@ -25,7 +25,7 @@ export default function Home() {
               >
                 <circle cx={1} cy={1} r={1} />
               </svg>
-              L'application faîtes par des étudiants pour des étudiants
+              {"L'application faîtes par des étudiants pour des étudiants"}
             </a>
           </p>
           <div className="flex flex-1 justify-end"></div>

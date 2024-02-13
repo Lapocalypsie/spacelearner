@@ -1,4 +1,4 @@
-package dev.spacelearning.spacelearning;
+package dev.spacelearning.spacelearning.cours;
 
 import org.bson.types.ObjectId;
 import org.springframework.data.mongodb.repository.MongoRepository;

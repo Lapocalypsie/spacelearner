@@ -1,5 +1,7 @@
-package dev.spacelearning.spacelearning;
+package dev.spacelearning.spacelearning.eleve;
 
+import dev.spacelearning.spacelearning.cours.Cours;
+import dev.spacelearning.spacelearning.todolist.ToDoList;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.Getter;

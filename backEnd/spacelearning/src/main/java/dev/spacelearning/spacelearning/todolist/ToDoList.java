@@ -1,4 +1,4 @@
-package dev.spacelearning.spacelearning;
+package dev.spacelearning.spacelearning.todolist;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

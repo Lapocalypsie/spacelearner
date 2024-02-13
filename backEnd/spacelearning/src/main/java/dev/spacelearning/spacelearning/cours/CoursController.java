@@ -1,8 +1,5 @@
-package dev.spacelearning.spacelearning;
+package dev.spacelearning.spacelearning.cours;
 
-import dev.spacelearning.spacelearning.Cours;
-import dev.spacelearning.spacelearning.CoursService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

@@ -1,0 +1,326 @@
+{
+  "quotes": [
+    {
+      "id": 1,
+      "text": "The only limit to our realization of tomorrow will be our doubts of today."
+    },
+    {
+      "id": 2,
+      "text": "Success is not final, failure is not fatal: It is the courage to continue that counts."
+    },
+    {
+      "id": 3,
+      "text": "The way to get started is to quit talking and begin doing."
+    },
+    {
+      "id": 4,
+      "text": "Don't watch the clock; do what it does. Keep going."
+    },
+    {
+      "id": 5,
+      "text": "The only way to do great work is to love what you do."
+    },
+    {
+      "id": 6,
+      "text": "Your time is limited, don't waste it living someone else's life."
+    },
+    {
+      "id": 7,
+      "text": "Believe you can and you're halfway there."
+    },
+    {
+      "id": 8,
+      "text": "You miss 100% of the shots you don't take."
+    },
+    {
+      "id": 9,
+      "text": "The best way to predict the future is to create it."
+    },
+    {
+      "id": 10,
+      "text": "The only place where success comes before work is in the dictionary."
+    },
+    {
+      "id": 11,
+      "text": "I find that the harder I work, the more luck I seem to have."
+    },
+    {
+      "id": 12,
+      "text": "Your work is going to fill a large part of your life, and the only way to be truly satisfied is to do what you believe is great work."
+    },
+    {
+      "id": 13,
+      "text": "If you want to achieve greatness stop asking for permission."
+    },
+    {
+      "id": 14,
+      "text": "Opportunities don't happen. You create them."
+    },
+    {
+      "id": 15,
+      "text": "Success is not in what you have, but who you are."
+    },
+    {
+      "id": 16,
+      "text": "The road to success and the road to failure are almost exactly the same."
+    },
+    {
+      "id": 17,
+      "text": "I have not failed. I've just found 10,000 ways that won't work."
+    },
+    {
+      "id": 18,
+      "text": "If you are not willing to risk the usual, you will have to settle for the ordinary."
+    },
+    {
+      "id": 19,
+      "text": "The only way to do great work is to love what you do."
+    },
+    {
+      "id": 20,
+      "text": "The only limit to our realization of tomorrow will be our doubts of today."
+    },
+    {
+      "id": 21,
+      "text": "Success usually comes to those who are too busy to be looking for it."
+    },
+    {
+      "id": 22,
+      "text": "Opportunities don't happen. You create them."
+    },
+    {
+      "id": 23,
+      "text": "Don't be afraid to give up the good to go for the great."
+    },
+    {
+      "id": 24,
+      "text": "Success is not just about making money. It's about making a difference."
+    },
+    {
+      "id": 25,
+      "text": "Don't be pushed around by the fears in your mind. Be led by the dreams in your heart."
+    },
+
+    {
+      "id": 26,
+      "text": "The best revenge is massive success."
+    },
+    {
+      "id": 27,
+      "text": "Success is not final, failure is not fatal: It is the courage to continue that counts."
+    },
+    {
+      "id": 28,
+      "text": "I find that the harder I work, the more luck I seem to have."
+    },
+    {
+      "id": 29,
+      "text": "If you want to achieve greatness stop asking for permission."
+    },
+    {
+      "id": 30,
+      "text": "The only place where success comes before work is in the dictionary."
+    },
+    {
+      "id": 31,
+      "text": "I have not failed. I've just found 10,000 ways that won't work."
+    },
+    {
+      "id": 32,
+      "text": "Opportunities don't happen. You create them."
+    },
+    {
+      "id": 33,
+      "text": "Success is not in what you have, but who you are."
+    },
+    {
+      "id": 34,
+      "text": "The road to success and the road to failure are almost exactly the same."
+    },
+    {
+      "id": 35,
+      "text": "Success usually comes to those who are too busy to be looking for it."
+    },
+    {
+      "id": 36,
+      "text": "Don't be afraid to give up the good to go for the great."
+    },
+    {
+      "id": 37,
+      "text": "Success is not just about making money. It's about making a difference."
+    },
+    {
+      "id": 38,
+      "text": "Don't be pushed around by the fears in your mind. Be led by the dreams in your heart."
+    },
+    {
+      "id": 39,
+      "text": "The only limit to our realization of tomorrow will be our doubts of today."
+    },
+    {
+      "id": 40,
+      "text": "Success usually comes to those who are too busy to be looking for it."
+    },
+    {
+      "id": 41,
+      "text": "Opportunities don't happen. You create them."
+    },
+    {
+      "id": 42,
+      "text": "Don't be afraid to give up the good to go for the great."
+    },
+    {
+      "id": 43,
+      "text": "Success is not just about making money. It's about making a difference."
+    },
+    {
+      "id": 44,
+      "text": "Don't be pushed around by the fears in your mind. Be led by the dreams in your heart."
+    },
+    {
+      "id": 45,
+      "text": "The only limit to our realization of tomorrow will be our doubts of today."
+    },
+    {
+      "id": 46,
+      "text": "Success usually comes to those who are too busy to be looking for it."
+    },
+    {
+      "id": 47,
+      "text": "Opportunities don't happen. You create them."
+    },
+    {
+      "id": 48,
+      "text": "Don't be afraid to give up the good to go for the great."
+    },
+    {
+      "id": 49,
+      "text": "Success is not just about making money. It's about making a difference."
+    },
+    {
+      "id": 50,
+      "text": "Don't be pushed around by the fears in your mind. Be led by the dreams in your heart."
+    },
+    {
+      "id": 51,
+      "text": "Success is not final, failure is not fatal: It is the courage to continue that counts."
+    },
+    {
+      "id": 52,
+      "text": "I find that the harder I work, the more luck I seem to have."
+    },
+    {
+      "id": 53,
+      "text": "If you want to achieve greatness stop asking for permission."
+    },
+    {
+      "id": 54,
+      "text": "The only place where success comes before work is in the dictionary."
+    },
+    {
+      "id": 55,
+      "text": "I have not failed. I've just found 10,000 ways that won't work."
+    },
+    {
+      "id": 56,
+      "text": "Opportunities don't happen. You create them."
+    },
+    {
+      "id": 57,
+      "text": "Success is not in what you have, but who you are."
+    },
+    {
+      "id": 58,
+      "text": "The road to success and the road to failure are almost exactly the same."
+    },
+    {
+      "id": 59,
+      "text": "Success usually comes to those who are too busy to be looking for it."
+    },
+    {
+      "id": 60,
+      "text": "Don't be afraid to give up the good to go for the great."
+    },
+    {
+      "id": 61,
+      "text": "Success is not just about making money. It's about making a difference."
+    },
+    {
+      "id": 62,
+      "text": "Don't be pushed around by the fears in your mind. Be led by the dreams in your heart."
+    },
+    {
+      "id": 63,
+      "text": "The only limit to our realization of tomorrow will be our doubts of today."
+    },
+    {
+      "id": 64,
+      "text": "Success usually comes to those who are too busy to be looking for it."
+    },
+    {
+      "id": 65,
+      "text": "Opportunities don't happen. You create them."
+    },
+    {
+      "id": 66,
+      "text": "Don't be afraid to give up the good to go for the great."
+    },
+    {
+      "id": 67,
+      "text": "Success is not just about making money. It's about making a difference."
+    },
+    {
+      "id": 68,
+      "text": "Don't be pushed around by the fears in your mind. Be led by the dreams in your heart."
+    },
+    {
+      "id": 69,
+      "text": "The only limit to our realization of tomorrow will be our doubts of today."
+    },
+    {
+      "id": 70,
+      "text": "Success usually comes to those who are too busy to be looking for it."
+    },
+    {
+      "id": 71,
+      "text": "Opportunities don't happen. You create them."
+    },
+    {
+      "id": 72,
+      "text": "Don't be afraid to give up the good to go for the great."
+    },
+    {
+      "id": 73,
+      "text": "Success is not just about making money. It's about making a difference."
+    },
+    {
+      "id": 74,
+      "text": "Don't be pushed around by the fears in your mind. Be led by the dreams in your heart."
+    },
+    {
+      "id": 75,
+      "text": "The only limit to our realization of tomorrow will be our doubts of today."
+    },
+    {
+      "id": 76,
+      "text": "Success usually comes to those who are too busy to be looking for it."
+    },
+    {
+      "id": 77,
+      "text": "Opportunities don't happen. You create them."
+    },
+    {
+      "id": 78,
+      "text": "Don't be afraid to give up the good to go for the great."
+    },
+    {
+      "id": 79,
+      "text": "Success is not just about making money. It's about making a difference."
+    },
+    {
+      "id": 80,
+      "text": "Don't be pushed around by the fears in your mind. Be led by the dreams in your heart."
+    }
+
+  ]
+}

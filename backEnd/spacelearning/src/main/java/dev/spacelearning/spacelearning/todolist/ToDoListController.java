@@ -1,7 +1,5 @@
-package dev.spacelearning.spacelearning;
+package dev.spacelearning.spacelearning.todolist;
 
-import org.bson.types.ObjectId;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

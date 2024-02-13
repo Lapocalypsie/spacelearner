@@ -1,7 +1,5 @@
-package dev.spacelearning.spacelearning;
+package dev.spacelearning.spacelearning.cours;
 
-import org.bson.types.ObjectId;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.stereotype.Service;
 
