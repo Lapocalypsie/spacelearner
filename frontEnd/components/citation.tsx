@@ -25,7 +25,6 @@ function Citation() {
       <div className="w-full mb-10">
         <div className="text-3xl text-indigo-500 text-left leading-tight h-3">“</div>
         
-        {/* Check if 'citation' is not null before accessing its properties */}
         {citation && (
           <>
             <p className="text-lg text-gray-600 text-center px-5">Citation Numéro : {citation.id}</p>
